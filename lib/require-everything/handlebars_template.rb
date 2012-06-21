@@ -23,7 +23,7 @@ module RequireEverything
       template.gsub!(/\t/, '\\t')
       <<-template
 define([], function (require) {
-  Handlebars.compile(\"#{template}\");
+  return Handlebars.compile(\"#{template}\");
 });
       template
     end
