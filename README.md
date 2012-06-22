@@ -1,17 +1,18 @@
 # RequireEverything
 
-Inspired by [Building the Next SoundCloud](http://backstage.soundcloud.com/2012/06/building-the-next-soundcloud/),
-I set out to create a similar workflow in Rails, which actually seems to be a nice fit. Features are coming as I
-need them in production, but generally this is what's goin down:
+Inspired by [Building the Next SoundCloud], I set out to create a similar
+workflow in Rails, which actually seems to be a nice fit. Features are coming as
+I need them in production, but generally this is what's goin down:
 
-> All Javascript, Templates and CSS are modularized via [RequireJS](http://requirejs.org), and are required when/where
-> needed.
+> All Javascript, Templates and CSS are modularized via [RequireJS], and are
+> required when/where needed.
 
-RequrieEverything is built around [Backbone.js](http://backbonejs.org), [Handlebars.js](http://handlebarsjs.com/)
-and [LESS](http://lesscss.org/). Intentionally, there isn't too much magick, but RE will automatically wrap boilerplates
-around your stylesheets and templates so you don't have to.
+RequrieEverything is built around [Backbone.js], [Handlebars.js] and [LESS].
+Intentionally, there isn't too much magick, but RE will automatically wrap
+boilerplates around your stylesheets and templates so you don't have to.
 
-In order to not conflict or nulify other template engines, extensions for templates and styles are prefixed with "re".
+In order to not conflict or nulify other template engines, extensions for
+templates and styles are prefixed with "re".
 
 ## .rehandlebars
 
@@ -23,7 +24,8 @@ Your handlebars templates are written as you would expect (no extra nonsense).
 </div>
 ```
 
-RequireEverything will then automatically wrap the template with the necessary loading boilerplate.
+RequireEverything will then automatically wrap the template with the necessary
+loading boilerplate.
 
 ```javascript
 // for up-to-date code, read the source
@@ -36,7 +38,7 @@ define([], function (require) {
 
 ## .reless
 
-Compiles [LESS](http://lesscss.org/) into a javascript wrapper:
+Compiles [LESS] into a javascript wrapper:
 
 
 ```javascript
@@ -52,3 +54,9 @@ define(function (require) {
   return style;
 });
 ```
+
+[Building the Next SoundCloud]: http://backstage.soundcloud.com/2012/06/building-the-next-soundcloud/
+[RequireJS]: http://requirejs.org
+[Backbone.js]: http://backbonejs.org
+[Handlebars.js]: http://handlebarsjs.com/
+[LESS]: http://lesscss.org/
