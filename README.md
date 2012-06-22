@@ -25,9 +25,9 @@ Your handlebars templates are written as you would expect (no extra nonsense).
 
 RequireEverything will then automatically wrap the template with the necessary loading boilerplate.
 
-*for up-to-date code, read the source*
-
 ```javascript
+// for up-to-date code, read the source
+
 define([], function (require) {
   // instantiate Handlebars template out of 
   return Handlebars.compile("<div id=\"{{id}}-foo\">{{name}}</div>");
@@ -38,9 +38,10 @@ define([], function (require) {
 
 Compiles [LESS](http://lesscss.org/) into a javascript wrapper:
 
-*for up-to-date code, read the source*
 
 ```javascript
+// for up-to-date code, read the source
+
 define(function (require) {
   var style = document.createElement('style');
   style.appendChild(
