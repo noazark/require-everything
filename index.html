@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Require-everything by noazark</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/noazark/require-everything">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Require-everything</h1>
+            <h2>Require javascripts, templates and stylesheets with RequireJS though the asset pipeline</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/noazark/require-everything/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/noazark/require-everything/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>RequireEverything</h1>
+
+<p>Inspired by <a href="http://backstage.soundcloud.com/2012/06/building-the-next-soundcloud/">Building the Next SoundCloud</a>, I set out to create a similar
+workflow in Rails, which actually seems to be a nice fit. Features are coming as
+I need them in production, but generally this is what's goin down:</p>
+
+<blockquote>
+<p>All Javascript, Templates and CSS are modularized via <a href="http://requirejs.org">RequireJS</a>, and are
+required when/where needed.</p>
+</blockquote>
+
+<p>RequrieEverything is built around <a href="http://backbonejs.org">Backbone.js</a>, <a href="http://handlebarsjs.com/">Handlebars.js</a> and <a href="http://lesscss.org/">LESS</a>.
+Intentionally, there isn't too much magick, but RE will automatically wrap
+boilerplates around your stylesheets and templates so you don't have to.</p>
+
+<p>In order to not conflict or nulify other template engines, extensions for
+templates and styles are prefixed with "re".</p>
+
+<h2>.rehandlebars</h2>
+
+<p>Your handlebars templates are written as you would expect (no extra nonsense).</p>
+
+<pre lang="handlebars"><code>&lt;div id="{{id}}-foo"&gt;
+  {{name}}
+&lt;/div&gt;
+</code></pre>
+
+<p>RequireEverything will then automatically wrap the template with the necessary
+loading boilerplate.</p>
+
+<div class="highlight">
+<pre><span class="c1">// for up-to-date code, read the source</span>
+
+<span class="nx">define</span><span class="p">([],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// instantiate Handlebars template out of </span>
+  <span class="k">return</span> <span class="nx">Handlebars</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="s2">"&lt;div id=\"{{id}}-foo\"&gt;{{name}}&lt;/div&gt;"</span><span class="p">);</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+
+<h2>.reless</h2>
+
+<p>Compiles <a href="http://lesscss.org/">LESS</a> into a javascript wrapper:</p>
+
+<div class="highlight">
+<pre><span class="c1">// for up-to-date code, read the source</span>
+
+<span class="nx">define</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'style'</span><span class="p">);</span>
+  <span class="nx">style</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span>
+    <span class="c1">// place compiled CSS into `style`</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">"..."</span><span class="p">);</span>
+  <span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">style</span><span class="p">;</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/noazark">noazark</a> can be found on <a href="https://github.com/noazark/require-everything">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
